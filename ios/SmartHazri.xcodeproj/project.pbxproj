@@ -11,6 +11,9 @@
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		761780ED2CA45674006654EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761780EC2CA45674006654EE /* AppDelegate.swift */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		A11000012CA45674006654EE /* NotoSansArabic-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A11000112CA45674006654EE /* NotoSansArabic-Regular.ttf */; };
+		A11000022CA45674006654EE /* NotoSansArabic-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A11000122CA45674006654EE /* NotoSansArabic-Medium.ttf */; };
+		A11000032CA45674006654EE /* NotoSansArabic-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A11000132CA45674006654EE /* NotoSansArabic-Bold.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +27,9 @@
 		761780EC2CA45674006654EE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = SmartHazri/AppDelegate.swift; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = SmartHazri/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		A11000112CA45674006654EE /* NotoSansArabic-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = NotoSansArabic-Regular.ttf; path = SmartHazri/Fonts/NotoSansArabic-Regular.ttf; sourceTree = "<group>"; };
+		A11000122CA45674006654EE /* NotoSansArabic-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = NotoSansArabic-Medium.ttf; path = SmartHazri/Fonts/NotoSansArabic-Medium.ttf; sourceTree = "<group>"; };
+		A11000132CA45674006654EE /* NotoSansArabic-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = NotoSansArabic-Bold.ttf; path = SmartHazri/Fonts/NotoSansArabic-Bold.ttf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,6 +47,9 @@
 		13B07FAE1A68108700A75B9A /* SmartHazri */ = {
 			isa = PBXGroup;
 			children = (
+				A11000112CA45674006654EE /* NotoSansArabic-Regular.ttf */,
+				A11000122CA45674006654EE /* NotoSansArabic-Medium.ttf */,
+				A11000132CA45674006654EE /* NotoSansArabic-Bold.ttf */,
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
 				761780EC2CA45674006654EE /* AppDelegate.swift */,
 				13B07FB61A68108700A75B9A /* Info.plist */,
@@ -157,6 +166,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A11000012CA45674006654EE /* NotoSansArabic-Regular.ttf in Resources */,
+				A11000022CA45674006654EE /* NotoSansArabic-Medium.ttf in Resources */,
+				A11000032CA45674006654EE /* NotoSansArabic-Bold.ttf in Resources */,
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 			);

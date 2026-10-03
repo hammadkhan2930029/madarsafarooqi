@@ -40,6 +40,21 @@ local.properties
 node_modules/
 npm-debug.log
 yarn-error.log
+metro.log
+metro.err.log
+
+# Environment-specific Firebase app credentials
+**/google-services.json
+**/GoogleService-Info.plist
+**/.runtimeconfig.json
+**/.env
+**/.env.*
+!**/.env.example
+firebase-debug.log
+firebase-debug.*.log
+functions/lib/
+functions/.secret.local
+.firebase-removal-backups/
 
 # fastlane
 #

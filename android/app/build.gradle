@@ -2,6 +2,11 @@ apply plugin: "com.android.application"
 apply plugin: "org.jetbrains.kotlin.android"
 apply plugin: "com.facebook.react"
 
+project.ext.vectoricons = [
+    iconFontNames: ["MaterialCommunityIcons.ttf"]
+]
+apply from: file("../../node_modules/react-native-vector-icons/fonts.gradle")
+
 /**
  * This is the configuration block to customize your React Native Android app.
  * By default you don't need to apply any configuration, just uncomment the lines you need.
@@ -57,7 +62,14 @@ react {
 /**
  * Set this to true to Run Proguard on Release builds to minify the Java bytecode.
  */
-def enableProguardInReleaseBuilds = false
+def enableProguardInReleaseBuilds = true
+def releaseSigningVariables = [
+    "SMART_HAZRI_UPLOAD_STORE_FILE",
+    "SMART_HAZRI_UPLOAD_STORE_PASSWORD",
+    "SMART_HAZRI_UPLOAD_KEY_ALIAS",
+    "SMART_HAZRI_UPLOAD_KEY_PASSWORD",
+]
+def hasReleaseSigning = releaseSigningVariables.every { System.getenv(it) != null }
 
 /**
  * The preferred build flavor of JavaScriptCore (JSC)
@@ -84,6 +96,7 @@ android {
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
         versionName "1.0"
+        manifestPlaceholders = [usesCleartextTraffic: "true"]
     }
     signingConfigs {
         debug {
@@ -92,16 +105,28 @@ android {
             keyAlias 'androiddebugkey'
             keyPassword 'android'
         }
+        release {
+            if (hasReleaseSigning) {
+                storeFile file(System.getenv("SMART_HAZRI_UPLOAD_STORE_FILE"))
+                storePassword System.getenv("SMART_HAZRI_UPLOAD_STORE_PASSWORD")
+                keyAlias System.getenv("SMART_HAZRI_UPLOAD_KEY_ALIAS")
+                keyPassword System.getenv("SMART_HAZRI_UPLOAD_KEY_PASSWORD")
+            } else {
+                storeFile file('debug.keystore')
+                storePassword 'android'
+                keyAlias 'androiddebugkey'
+                keyPassword 'android'
+            }
+        }
     }
     buildTypes {
         debug {
             signingConfig signingConfigs.debug
         }
         release {
-            // Caution! In production, you need to generate your own keystore file.
-            // see https://reactnative.dev/docs/signed-apk-android.
-            signingConfig signingConfigs.debug
+            signingConfig signingConfigs.release
             minifyEnabled enableProguardInReleaseBuilds
+            shrinkResources enableProguardInReleaseBuilds
             proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
         }
     }
@@ -110,7 +135,6 @@ android {
 dependencies {
     // The version of react-native is set by the React Native Gradle Plugin
     implementation("com.facebook.react:react-android")
-
     if (hermesEnabled.toBoolean()) {
         implementation("com.facebook.react:hermes-android")
     } else {

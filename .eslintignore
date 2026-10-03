@@ -1,0 +1,6 @@
+android/
+ios/
+node_modules/
+coverage/
+metro.log
+metro.err.log
